@@ -1,0 +1,7 @@
+{
+  "host": "HOST_HERE",
+  "port": 5432,
+  "user": "USER_HERE",
+  "password": "PASSWORD_HERE",
+  "db": "BD_HERE"
+}

@@ -1,0 +1,6 @@
+tqdm
+numpy
+pandas
+psycopg2
+yaml
+logging

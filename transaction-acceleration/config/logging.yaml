@@ -1,0 +1,31 @@
+version: 1
+formatters:
+  default:
+    format: '%(asctime)s [%(filename)s:%(lineno)s - %(funcName)s()] %(levelname)s: %(message)s'
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: DEBUG
+    formatter: default
+    stream: ext://sys.stdout
+
+  handler_application:
+    class: logging.handlers.RotatingFileHandler
+    level: DEBUG
+    formatter: default
+    filename: ../logs/application.log
+    backupCount: 10
+    maxBytes: 1073741824
+
+loggers:
+  logger_application:
+    level: DEBUG
+    handlers: [handler_application, console]
+    propagate: no
+
+root:
+  level: DEBUG
+  handlers: [console]
+
+
