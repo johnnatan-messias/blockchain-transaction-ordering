@@ -1,5 +1,6 @@
 import logging
 import os
+from logging.config import dictConfig
 
 import yaml
 
@@ -12,7 +13,7 @@ class LoggerFactory:
     def get_logger(module_name=None):
         # Get Configuration file path
         os.makedirs(name=ApplicationPaths.logs(), exist_ok=True)
-        logging.config.dictConfig(
+        dictConfig(
             yaml.load(open(ApplicationPaths.config('logging.yaml'), 'r'), Loader=yaml.SafeLoader))
 
         if module_name:
