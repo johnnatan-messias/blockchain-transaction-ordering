@@ -32,7 +32,7 @@ def main(args):
         logger.info(
             "As the mempool is not congested the execution was aborted!")
 
-    run_is_transactions_accelerated(filename=args.filename)
+    # run_is_transactions_accelerated(filename=args.filename)
 
 
 if __name__ == "__main__":
