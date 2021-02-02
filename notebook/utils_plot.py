@@ -82,19 +82,6 @@ def autolabel(rects, precision=4, fontsize=None):
                  ha='center', va='bottom', color='#333333', fontsize=fontsize)
 
 
-def autolabel_bkp(rects, precision=4):
-    """
-    Attach a text label above each bar displaying its height
-    """
-    for rect in rects:
-        height = rect.get_height()
-        if height == 0:
-            continue
-        plt.text(rect.get_x() + rect.get_width()/2., 1.05*height,
-                 f'%.{precision}f' % float(height),
-                 ha='center', va='bottom', color='#333333')
-
-
 def plot_cdf(data, x_label='', y_label='', log=False, interval=None,
              color=None, ax=None, label=None,
              linewidth=None, style='-', alpha=1, y_lim=[0, 1], marker=None, markersize=None):
