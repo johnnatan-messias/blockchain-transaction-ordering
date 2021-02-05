@@ -48,13 +48,23 @@ class RepositoryRDBMS:
         data = self.__select(sql=sql)
         return data
 
+    def get_block_by_hash(self, block_height):
+        sql = f"SELECT block_json FROM {table_blockchain_block} WHERE block_hash = {block_hash};"
+        data = self.__select(sql=sql)
+        return data
+
+    def get_block_timestamp(self, min_height, max_height):
+        sql = f"SELECT block_height, block_json->'nTx' as ntx, block_json->'time' as timestamp FROM {table_blockchain_block} WHERE block_height >= {min_height} and block_height <= {max_height} ORDER BY block_height;"
+        data = self.__select(sql=sql)
+        return data
+
     def get_number_of_transactions_per_block(self):
         sql = f"SELECT block_height, block_json#>>'{nTx}' AS block_ntx FROM {table_blockchain_block};"
         data = self.__select(sql=sql)
         return data
 
     def get_amount_of_transactions(self):
-        sql = "SELECT block.block_height, block.ntx, transaction.ntx FROM (SELECT block.block_height, block.block_json#>>'{nTx}' AS ntx FROM blockchain_block block) JOIN (SELECT transaction.block_height, count(*) AS ntx FROM blockchain_transaction transaction GROUP BY block_height) ON block.block_height = transaction.block_height) WHERE block.ntx <> transaction.ntx;"
+        sql = f"SELECT block.block_height, block.ntx, transaction.ntx FROM (SELECT block.block_height, block.block_json#>>'{nTx}' AS ntx FROM {table_blockchain_block} block) JOIN (SELECT transaction.block_height, count(*) AS ntx FROM {table_blockchain_transaction} transaction GROUP BY block_height) ON block.block_height = transaction.block_height) WHERE block.ntx <> transaction.ntx;"
         data = self.__select(sql=sql)
         return data
 
@@ -70,6 +80,14 @@ class RepositoryRDBMS:
     def get_all_transactions_from_database(self, min_height, max_height):
         response = list()
         sql = f"SELECT txid, block_height, tx_position, tx_json FROM {table_blockchain_transaction} WHERE block_height >= {min_height} AND block_height <= {max_height} ORDER BY block_height;"
+        data = self.__select(sql=sql)
+        if len(data) != 0:
+            response = data
+        return response
+
+    def get_coinbase_transactions_from_database(self, min_height, max_height):
+        response = list()
+        sql = f"SELECT txid, block_height, tx_json FROM {table_blockchain_transaction} WHERE tx_position = 0 AND block_height >= {min_height} AND block_height <= {max_height} ORDER BY block_height;"
         data = self.__select(sql=sql)
         if len(data) != 0:
             response = data

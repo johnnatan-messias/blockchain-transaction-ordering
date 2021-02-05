@@ -4,3 +4,5 @@ pandas
 psycopg2
 yaml
 logging
+scikit-learn
+
