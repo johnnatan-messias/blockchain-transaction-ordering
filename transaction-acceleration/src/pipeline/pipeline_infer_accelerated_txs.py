@@ -5,8 +5,11 @@ logger = LoggerFactory.get_logger('logger_application')
 
 
 class CheckAcceleratedTxs:
-    def __init__(self, filename='txids-acceleration.json', n_processes=50):
-        self.filename = filename
+    def __init__(self, filename_in='txids-acceleration.json',
+                 filename_out='tx-acceleration-raw-data.json.gz',
+                 n_processes=50):
+        self.filename_in = filename_in
+        self.filename_out = filename_out
         self.n_processes = n_processes
         self.btc_api = BTC_Com()
         self.txids = list()
@@ -27,9 +30,12 @@ class CheckAcceleratedTxs:
         pool = ThreadPool(num_threads=self.n_processes, save_results=True)
         pbar = tqdm(desc="Crawling txs. prices",
                     total=len(self.txids), ascii=True)
-        for txid in self.txids:
-            pbar.update(1)
-            pool.add_task(self._crawl_tx_price, txid)
+        try:
+            for txid in self.txids:
+                pbar.update(1)
+                pool.add_task(self._crawl_tx_price, txid)
+        except KeyboardInterrupt:
+            logger.error("Execution aborted by the user!")
         pool.wait_completion()
         pbar.close()
         self.txs_acceleration = list(pool.get_results())
@@ -46,8 +52,8 @@ class CheckAcceleratedTxs:
 
     def __load_txids(self):
         self.txids = FileManager.load_json(
-            filename=self.filename, compression=False)[0]
+            filename=self.filename_in, compression=False)[0]
 
     def __persist(self):
         FileManager.dump_raw_json(
-            data=self.txs_acceleration, filename=f"tx-acceleration-raw-data.json.gz")
+            data=self.txs_acceleration, filename=self.filename_out)

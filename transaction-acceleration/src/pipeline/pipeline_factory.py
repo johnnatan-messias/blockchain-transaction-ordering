@@ -27,6 +27,6 @@ class PipelineFactory:
         select_txs.execute()
 
     @staticmethod
-    def check_accelerated_txs(filename='txids-acceleration.json'):
-        accelerated_txs = CheckAcceleratedTxs(filename)
+    def check_accelerated_txs(filename_in, filename_out):
+        accelerated_txs = CheckAcceleratedTxs(filename_in=filename_in, filename_out=filename_out)
         accelerated_txs.execute()
