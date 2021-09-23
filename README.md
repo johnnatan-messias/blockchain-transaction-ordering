@@ -172,7 +172,7 @@ In the last week, they had together 56% of the computing capacity as follows ([s
 
 ---
 
-- For reporting bugs please use the [bitcoin-transaction-ordering/issues](https://github.com/johnnatan-messias/bitcoin-transaction-ordering/issues) page.
+- For reporting bugs please use the [blockchain-transaction-ordering/issues](https://github.com/johnnatan-messias/blockchain-transaction-ordering/issues) page.
 
 In case of any issue, please feel free to contact me at johnme@mpi-sws.org
 
