@@ -180,5 +180,5 @@ In case of any issue, please feel free to contact me at johnme@mpi-sws.org
 
 ---
 
-TBA
+MIT
 
