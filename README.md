@@ -1,4 +1,4 @@
-# Analysing Transaction Ordering in Blockchains: Collusive Acceleration of Bitcoin Transactions
+# Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality
 This content is part of the following scientific paper:
 
 ```
