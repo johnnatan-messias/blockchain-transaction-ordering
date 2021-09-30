@@ -1,6 +1,6 @@
 # Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality
 
-This content is part of the following scientific paper: https://johnnatan-messias.github.io/pdf/messias_imc2021_btc_tx_ordering.pdf
+This content is part of the following scientific paper: https://people.mpi-sws.org/~johnme/pdf/messias_imc2021_btc_tx_ordering.pdf
 
 ```
 Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality.
