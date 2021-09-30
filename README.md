@@ -1,5 +1,6 @@
 # Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality
-This content is part of the following scientific paper:
+
+This content is part of the following scientific paper: https://johnnatan-messias.github.io/pdf/messias_imc2021_btc_tx_ordering.pdf
 
 ```
 Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality.
@@ -7,7 +8,7 @@ Johnnatan Messias, Mohamed Alzayat, Balakrishnan Chandrasekaran, Krishna P. Gumm
 In Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC 2021). Virtual Event. November, 2021.
 ```
 
-
+**The full data set and the remaining code/scripts will be available here by November 4th 2021.**
 
 # Introduction
 Transaction Accelerators are services where users pay Mining Pool Operators (MPO) to increase the probability of their transaction inclusion within a few blocks. MPOs get extra incentives (e.g., fiat money or other cryptocurrencies) to prioritize these transactions. Imagine a situation where an MPO also provides a Wallet service to its users, claiming that the transactions issued would get higher priority for inclusion or even broadcasted to some highly connected nodes. It is somehow some evidence that some MPO might not purely follow the fee-per-byte strategy to order transactions as know to be the ordering norm.
