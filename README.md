@@ -5,13 +5,13 @@ This content is part of the following scientific paper: https://people.mpi-sws.o
 ```
 Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality.
 Johnnatan Messias, Mohamed Alzayat, Balakrishnan Chandrasekaran, Krishna P. Gummadi, Patrick Loiseau, and Alan Mislove.
-In Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC 2021). Virtual Event. November, 2021.
+In Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC 2021). Virtual Event. November 2021.
 ```
 
-**The full data set and the remaining code/scripts will be available here by November 4th 2021.**
+**The full data set and the remaining code/scripts will be available by November 4th, 2021.**
 
 # Introduction
-Transaction Accelerators are services where users pay Mining Pool Operators (MPO) to increase the probability of their transaction inclusion within a few blocks. MPOs get extra incentives (e.g., fiat money or other cryptocurrencies) to prioritize these transactions. Imagine a situation where an MPO also provides a Wallet service to its users, claiming that the transactions issued would get higher priority for inclusion or even broadcasted to some highly connected nodes. It is somehow some evidence that some MPO might not purely follow the fee-per-byte strategy to order transactions as know to be the ordering norm.
+Transaction Accelerators are services where users pay Mining Pool Operators (MPO) to increase the probability of their transaction inclusion within a few blocks. MPOs get extra incentives (e.g., fiat money or other cryptocurrencies) to prioritize these transactions. Imagine a situation where an MPO also provides a Wallet service to its users, claiming that the transactions issued would get higher priority for inclusion or broadcast to some highly connected nodes. It is somehow some evidence that some MPOs might not purely follow the fee-per-byte strategy to order transactions as know to be the ordering norm.
 
 Examples of Transaction Accelerator services offered by the Mining Pools include:
 
@@ -22,7 +22,7 @@ Examples of Transaction Accelerator services offered by the Mining Pools include
  
 ## Mining Pools
 
-* [BTC.com](https://btc.com/) is one of the top MPOs currently available. BTC.com claims that their transaction accelerator, in cooperation with "several leading Bitcoin Pools," can increase the probability of confirming transactions within 1 hour to 75%, within 4 hours to 98%. Users must pay a higher amount of money to use their service than they would typically pay via network transaction fees. Instead, they argue it is "based on transaction size, bitcoin price, etc." We hypothesize they might use transaction value and time (based on time or even the total number of blocks in the blockchain when they received the transaction) as a parameter for defining the acceleration fees. According to their webpage, this service is not refundable as they cannot trace whether a transaction was accelerated.
+* [BTC.com](https://btc.com/) is one of the top MPOs currently available. BTC.com claims that their transaction accelerator, in cooperation with "several leading Bitcoin Pools," can increase the probability of confirming transactions within 1 hour to 75%, within 4 hours to 98%. Users must pay a higher amount of money to use their service than they typically pay via network transaction fees. Instead, they argue it is "based on transaction size, bitcoin price, etc." We hypothesize they might use transaction value and time (based on time or even the total number of blocks in the blockchain when they received the transaction) as a parameter for defining the acceleration fees. According to their webpage, this service is not refundable as they cannot trace whether a transaction was accelerated.
 * [ViaBTC](https://www.viabtc.com/) offers, on the other hand, the accelerator into two modalities. A free version limited to 100 requests per hour (accepts only transactions with at least 0.0001BTC/kB (10-4 BTC/kB) as the fee) and a paid one similar to the BTC.com, accepting both Bitcoin (BTC), Bitcoin Cash (BTH), and LiteCoin (LTC).
 * [Poolin](https://www.poolin.com/) claims that their service can increase the probability of confirming transactions within 1 hour to 80%. They accept payment via WeChat Bitcoin (BTC), Litecoin (LTC), Ethereum (ETH), DogeCoin (DOGE), Zcash (ZEC), and Dash (DASH). Their service is also non-refundable
 
@@ -36,14 +36,14 @@ Another reason why different miners might prefer or not prefer certain transacti
 
 ### How does the payment work?
 
-ViaBTC asks for a Bitcoin Cash (BTH) transfer to a specific address, and they also suggest users not include any transaction fee on the accelerated transaction. We hypothesize that as the MPO will include these transactions in the next blocks, it does not matter whether users have included the transaction fee or not).
+ViaBTC asks for a Bitcoin Cash (BTH) transfer to a specific address, and they also suggest users not include any transaction fee on the accelerated transaction. We hypothesize that as the MPO will include these transactions in the subsequent blocks, it does not matter whether users have included the transaction fee or not).
 
 On the other hand, BTC.com provides different options of payment separated per region. The payment options include a bank transfer, Bitcoin Cash (BTH), Webmoney service, which also allows users to make the payment in Bitcoins (BTC), Trustpay, and Dotpay services, which enable users to make a bank transfer (e.g., dollar and euro).
 
 
 #### Curiosities
 
-Both analyzed MPOs claim, due to the Bitcoin network congestion, the number of transactions increased so much that the current block size limit is not enough to confirm transactions in due time. Therefore, they provide transaction acceleration services to allow users to have their transactions confirmed in the next few mined blocks. 
+Both analyzed MPOs claim that the number of transactions increased so much due to the Bitcoin network congestion that the current block size limit is not enough to confirm transactions in due time. Therefore, they provide transaction acceleration services to allow users to confirm their transactions in the next few mined blocks. 
 
 ### Broadcast transaction services
 
@@ -82,45 +82,45 @@ In the last week, they had together 56% of the computing capacity as follows ([s
 ### [ViaBTC accelerator](https://www.viabtc.com/tools/txaccelerator/)
 
 * [35b18e7a119173c8136c460e45d5d2a87d69304f69546f22ebed2c5f3852dbc1](https://explorer.btc.com/btc/transaction/35b18e7a119173c8136c460e45d5d2a87d69304f69546f22ebed2c5f3852dbc1)
-     * Paid 0.001254 BTC on 2020-11-26 20:13 and included by Huobi on 2020-11-26 20:35 in the 2nd position of the block height 658805.
-     * 2 blocks delay after the acceleration.
-     * The transaction was accelerated when the blockchain's last block height was 658803 and included in block height 658805.
-     * Miners in the middle: (658804, Binance)
+ * Paid 0.001254 BTC on 2020-11-26 20:13 and included by Huobi on 2020-11-26 20:35 in the 2nd position of the block height 658805.
+ * 2 blocks delay after the acceleration.
+ * The transaction was accelerated when the blockchain's last block height was 658803 and included in block height 658805.
+ * Miners in the middle: (658804, Binance)
  
 
 * [65765c65acc86bde3d305b2594229af0839b3636aabea49e7255521412baede2](https://explorer.btc.com/btc/transaction/65765c65acc86bde3d305b2594229af0839b3636aabea49e7255521412baede2)
-     * Paid 0.001254 BTC (21.16 USD) on 2020-11-27 12:08 and included by F2Pool on 2020-11-27 12:21 in the 73rd position of the block height 658898.
-     * 1 block delay after the acceleration.
-     * The transaction was accelerated when the blockchain's last block height was 658897 and included in the block height 658898.
-     * Miners in the middle: None
+ * Paid 0.001254 BTC (21.16 USD) on 2020-11-27 12:08 and included by F2Pool on 2020-11-27 12:21 in the 73rd position of the block height 658898.
+ * 1 block delay after the acceleration.
+ * The transaction was accelerated when the blockchain's last block height was 658897 and included in the block height 658898.
+ * Miners in the middle: None
 
 
 * [0c2098e3b3c993f5fc1d188da3b9d0a8731961bb946c4048d7a99fa83129fbf0](https://explorer.btc.com/btc/transaction/0c2098e3b3c993f5fc1d188da3b9d0a8731961bb946c4048d7a99fa83129fbf0)
-     * Paid 0.001254 BTC (21.30 USD) on 2020-11-27 14:38 and included by AntPool on 2020-11-27 14:43 in the 2nd position of the block height 658912.
-     * 2 blocks delay after the acceleration.
-     * The transaction was accelerated when the blockchain's last block height was 658910 and included in the block height 658912.
-     * Miners in the middle: (658911, Poolin)
+ * Paid 0.001254 BTC (21.30 USD) on 2020-11-27 14:38 and included by AntPool on 2020-11-27 14:43 in the 2nd position of the block height 658912.
+ * 2 blocks delay after the acceleration.
+ * The transaction was accelerated when the blockchain's last block height was 658910 and included in the block height 658912.
+ * Miners in the middle: (658911, Poolin)
 
 
 * [1515a78b711558a1508400b36f554d798a31bd97e3852de5bae598e020179af3](https://explorer.btc.com/btc/transaction/1515a78b711558a1508400b36f554d798a31bd97e3852de5bae598e020179af3)
-     * Paid 0.001254 BTC (21.33 USD) on 2020-11-27 22:55 and included by Binance on 2020-11-27 23:37 in the 2nd position of the block height 658971.
-     * 3 blocks delay after the acceleration.
-     * The transaction was accelerated when the blockchain's last block height was 658968 and included in block height 658971.
-     * Miners in the middle: (658969, Binance), (658970, BTCPool)
+ * Paid 0.001254 BTC (21.33 USD) on 2020-11-27 22:55 and included by Binance on 2020-11-27 23:37 in the 2nd position of the block height 658971.
+ * 3 blocks delay after the acceleration.
+ * The transaction was accelerated when the blockchain's last block height was 658968 and included in block height 658971.
+ * Miners in the middle: (658969, Binance), (658970, BTCPool)
 
 
 * [48a0a55252bc029286e4af6215d1673e6744216ffc86b3c7b36eeafe640ddaec](https://explorer.btc.com/btc/transaction/48a0a55252bc029286e4af6215d1673e6744216ffc86b3c7b36eeafe640ddaec)
-     * Paid 0.001045 BTC (19.38 USD) on 2020-11-30 11:11 and included by ViaBTC on 2020-11-30 11:23 in the 3rd position of the block height 659335.
-     * 1 block delay after the acceleration.
-     * The transaction was accelerated when the blockchain's last block height was 659334 and included in block height 659335.
-     * Miners in the middle: None
+ * Paid 0.001045 BTC (19.38 USD) on 2020-11-30 11:11 and included by ViaBTC on 2020-11-30 11:23 in the 3rd position of the block height 659335.
+ * 1 block delay after the acceleration.
+ * The transaction was accelerated when the blockchain's last block height was 659334 and included in block height 659335.
+ * Miners in the middle: None
 
 
 * [9a17cfef7e7bda668415a4a4918195669086f0507786a0c971df24a1c3f3734c](https://explorer.btc.com/btc/transaction/9a17cfef7e7bda668415a4a4918195669086f0507786a0c971df24a1c3f3734c)
-     * Paid 0.001045 BTC (19.38 USD) on 2020-11-30 11:31 and included by Huobi on 2020-11-30 11:51 in the 2nd position of the block height 659341.
-     * 2 blocks delay after the acceleration.
-     * The transaction was accelerated when the blockchain's last block height was 659339 and included in block height 659341.
-     * Miners in the middle: (659341, Poolin)
+ * Paid 0.001045 BTC (19.38 USD) on 2020-11-30 11:31 and included by Huobi on 2020-11-30 11:51 in the 2nd position of the block height 659341.
+ * 2 blocks delay after the acceleration.
+ * The transaction was accelerated when the blockchain's last block height was 659339 and included in block height 659341.
+ * Miners in the middle: (659341, Poolin)
 
 
 * [831b246f748db46d4f52318e39171b0b587165282be3f07135d978ef0795d421](https://explorer.btc.com/btc/transaction/831b246f748db46d4f52318e39171b0b587165282be3f07135d978ef0795d421)
@@ -131,24 +131,24 @@ In the last week, they had together 56% of the computing capacity as follows ([s
 
 
 * [1f59bfc1ef2de7b2bc9d3dd3f3e35dba437c25a93d53533a76d604284047096c](https://explorer.btc.com/btc/transaction/1f59bfc1ef2de7b2bc9d3dd3f3e35dba437c25a93d53533a76d604284047096c)
-     * Paid 0.001045 BTC (19.38 USD) on 2020-11-30 14:00 and included by F2Pool on 2020-11-30 14:40 in the 111th position of the block height 659355.
-     * 3 blocks delay after the acceleration.
-     * The transaction was accelerated when the blockchain's last block height was 659352 and included in block height 659355.
-     * Miners in the middle: (659353, 1THash&58COIN), (659354, Lubian.com)
+ * Paid 0.001045 BTC (19.38 USD) on 2020-11-30 14:00 and included by F2Pool on 2020-11-30 14:40 in the 111th position of the block height 659355.
+ * 3 blocks delay after the acceleration.
+ * The transaction was accelerated when the blockchain's last block height was 659352 and included in block height 659355.
+ * Miners in the middle: (659353, 1THash&58COIN), (659354, Lubian.com)
 
 
 * [6942e0751586aa8f37b6cad4eb036373035d74f40ba36277a7d1ef17ca8c06c3](https://explorer.btc.com/btc/transaction/6942e0751586aa8f37b6cad4eb036373035d74f40ba36277a7d1ef17ca8c06c3)
-     * Paid 0.001045 BTC (19.38 USD) on 2020-11-30 15:51 and transaction included by Huobi on 2020-11-30 16:18 in the 2nd position of the block height 659362.
-     * 2 blocks delay after the acceleration.
-     * The transaction was accelerated when the blockchain's last block height was 659360 and included in block height 659362.
-     * Miners in the middle: (659361, 1THash&58COIN)
+ * Paid 0.001045 BTC (19.38 USD) on 2020-11-30 15:51 and transaction included by Huobi on 2020-11-30 16:18 in the 2nd position of the block height 659362.
+ * 2 blocks delay after the acceleration.
+ * The transaction was accelerated when the blockchain's last block height was 659360 and included in block height 659362.
+ * Miners in the middle: (659361, 1THash&58COIN)
 
 
 * [8e49e27c5eb6959e26dec8ab36d4dc6508105447ce8892d71c2837934eae825f](https://explorer.btc.com/btc/transaction/8e49e27c5eb6959e26dec8ab36d4dc6508105447ce8892d71c2837934eae825f)
-     * Paid 0.001254 BTC (24.72 USD) on 2020-12-01 11:41 and included by ViaBTC on 2020-12-01 11:50 in the 6th position of the block height 659481.
-     * 1 block delay after the acceleration.
-     * The transaction was accelerated when the blockchain's last block height was 659480 and included in block height 659481.
-     * Miners in the middle: None
+ * Paid 0.001254 BTC (24.72 USD) on 2020-12-01 11:41 and included by ViaBTC on 2020-12-01 11:50 in the 6th position of the block height 659481.
+ * 1 block delay after the acceleration.
+ * The transaction was accelerated when the blockchain's last block height was 659480 and included in block height 659481.
+ * Miners in the middle: None
 
 
 ### [Poolin](https://pushtx.com)
@@ -158,19 +158,19 @@ In the last week, they had together 56% of the computing capacity as follows ([s
  
 ### We summarize the results below.
 
-|                                                                            txid                                                                           | block height |  miner  | tx. position |    delay (in blocks)    | acc. cost (BTC)|  vsize (byte)|    feerate (sat-per-vsize)   |       Mempool (# of txs.)     |   Mempool vsize (MB)                | timestamp (in UTC)|
+| txid | block height | miner | tx. position | delay (in blocks) | acc. cost (BTC)| vsize (byte)| feerate (sat-per-vsize) | Mempool (# of txs.) | Mempool vsize (MB) | timestamp (in UTC)|
 |:---------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------:|:-------:|:------------:|:-------------------:|:-----------------:|:--------------:|:---------------------:|:------------------:|:------------------:|:-----------------:|
-|                                                                                                                                                           |          
-| [35b18e7a119173c8136c460e45d5d2a87d69304f69546f22ebed2c5f3852dbc1](https://explorer.btc.com/btc/transaction/35b18e7a119173c8136c460e45d5d2a87d69304f69546f22ebed2c5f3852dbc1) | [658805](https://explorer.btc.com/btc/block/658805) |  Huobi  |    2nd   |          2          |      0.001254     |       110      |           2           |     36,644    |        44.63       |  2020-11-26 19:10 |
-| [65765c65acc86bde3d305b2594229af0839b3636aabea49e7255521412baede2](https://explorer.btc.com/btc/transaction/65765c65acc86bde3d305b2594229af0839b3636aabea49e7255521412baede2) | [658898](https://explorer.btc.com/btc/block/658898) |  F2Pool |   73th   |          1          |      0.001254     |       110      |           2           |     20,998    |        32.55       |  2020-11-27 11:06 |
-| [0c2098e3b3c993f5fc1d188da3b9d0a8731961bb946c4048d7a99fa83129fbf0](https://explorer.btc.com/btc/transaction/0c2098e3b3c993f5fc1d188da3b9d0a8731961bb946c4048d7a99fa83129fbf0) | [658912](https://explorer.btc.com/btc/block/658912) | AntPool |    2nd   |          2          |      0.001254     |       110      |           1           |     30,126    |        38.01       |  2020-11-27 13:38 |
-| [1515a78b711558a1508400b36f554d798a31bd97e3852de5bae598e020179af3](https://explorer.btc.com/btc/transaction/1515a78b711558a1508400b36f554d798a31bd97e3852de5bae598e020179af3) | [658971](https://explorer.btc.com/btc/block/658971) | Binance |    2nd   |          3          |      0.001254     |       110      |           1           |     25,922    |        37.89       |  2020-11-27 21:55 |
-| [48a0a55252bc029286e4af6215d1673e6744216ffc86b3c7b36eeafe640ddaec](https://explorer.btc.com/btc/transaction/48a0a55252bc029286e4af6215d1673e6744216ffc86b3c7b36eeafe640ddaec) | [659335](https://explorer.btc.com/btc/block/659335) |  ViaBTC |    3rd   |          1          |      0.001045     |       110      |           1           |     15,605    |        9.82        |  2020-11-30 10:09 |
-| [9a17cfef7e7bda668415a4a4918195669086f0507786a0c971df24a1c3f3734c](https://explorer.btc.com/btc/transaction/9a17cfef7e7bda668415a4a4918195669086f0507786a0c971df24a1c3f3734c) | [659341](https://explorer.btc.com/btc/block/659341) |  Huobi  |    2nd   |          2          |      0.001045     |       110      |           1           |     14,945    |        9.41        |  2020-11-30 10:28 |
-| [831b246f748db46d4f52318e39171b0b587165282be3f07135d978ef0795d421](https://explorer.btc.com/btc/transaction/831b246f748db46d4f52318e39171b0b587165282be3f07135d978ef0795d421) | [659351](https://explorer.btc.com/btc/block/659351) | AntPool |    2nd   |          1          |      0.001045     |       110      |           1           |     10,990    |        8.66        |  2020-11-30 12:22 |
-| [1f59bfc1ef2de7b2bc9d3dd3f3e35dba437c25a93d53533a76d604284047096c](https://explorer.btc.com/btc/transaction/1f59bfc1ef2de7b2bc9d3dd3f3e35dba437c25a93d53533a76d604284047096c) | [659355](https://explorer.btc.com/btc/block/659355) |  F2Pool |   111th  |          3          |      0.001045     |       110      |           1           |     17,093    |        11.40       |  2020-11-30 12:58 |
-| [6942e0751586aa8f37b6cad4eb036373035d74f40ba36277a7d1ef17ca8c06c3](https://explorer.btc.com/btc/transaction/6942e0751586aa8f37b6cad4eb036373035d74f40ba36277a7d1ef17ca8c06c3) | [659362](https://explorer.btc.com/btc/block/659362) |  Huobi  |    2nd   |          2          |      0.001045     |       110      |           1           |     30,836    |        19.06       |  2020-11-30 14:49 |
-| [8e49e27c5eb6959e26dec8ab36d4dc6508105447ce8892d71c2837934eae825f](https://explorer.btc.com/btc/transaction/8e49e27c5eb6959e26dec8ab36d4dc6508105447ce8892d71c2837934eae825f) | [659481](https://explorer.btc.com/btc/block/659481) |  ViaBTC |    6th   |          1          |      0.001254     |       110      |           2           |     30,935    |        22.59       |  2020-12-01 10:40 |
+| | 
+| [35b18e7a119173c8136c460e45d5d2a87d69304f69546f22ebed2c5f3852dbc1](https://explorer.btc.com/btc/transaction/35b18e7a119173c8136c460e45d5d2a87d69304f69546f22ebed2c5f3852dbc1) | [658805](https://explorer.btc.com/btc/block/658805) | Huobi | 2nd | 2 | 0.001254 | 110 | 2 | 36,644 | 44.63 | 2020-11-26 19:10 |
+| [65765c65acc86bde3d305b2594229af0839b3636aabea49e7255521412baede2](https://explorer.btc.com/btc/transaction/65765c65acc86bde3d305b2594229af0839b3636aabea49e7255521412baede2) | [658898](https://explorer.btc.com/btc/block/658898) | F2Pool | 73th | 1 | 0.001254 | 110 | 2 | 20,998 | 32.55 | 2020-11-27 11:06 |
+| [0c2098e3b3c993f5fc1d188da3b9d0a8731961bb946c4048d7a99fa83129fbf0](https://explorer.btc.com/btc/transaction/0c2098e3b3c993f5fc1d188da3b9d0a8731961bb946c4048d7a99fa83129fbf0) | [658912](https://explorer.btc.com/btc/block/658912) | AntPool | 2nd | 2 | 0.001254 | 110 | 1 | 30,126 | 38.01 | 2020-11-27 13:38 |
+| [1515a78b711558a1508400b36f554d798a31bd97e3852de5bae598e020179af3](https://explorer.btc.com/btc/transaction/1515a78b711558a1508400b36f554d798a31bd97e3852de5bae598e020179af3) | [658971](https://explorer.btc.com/btc/block/658971) | Binance | 2nd | 3 | 0.001254 | 110 | 1 | 25,922 | 37.89 | 2020-11-27 21:55 |
+| [48a0a55252bc029286e4af6215d1673e6744216ffc86b3c7b36eeafe640ddaec](https://explorer.btc.com/btc/transaction/48a0a55252bc029286e4af6215d1673e6744216ffc86b3c7b36eeafe640ddaec) | [659335](https://explorer.btc.com/btc/block/659335) | ViaBTC | 3rd | 1 | 0.001045 | 110 | 1 | 15,605 | 9.82 | 2020-11-30 10:09 |
+| [9a17cfef7e7bda668415a4a4918195669086f0507786a0c971df24a1c3f3734c](https://explorer.btc.com/btc/transaction/9a17cfef7e7bda668415a4a4918195669086f0507786a0c971df24a1c3f3734c) | [659341](https://explorer.btc.com/btc/block/659341) | Huobi | 2nd | 2 | 0.001045 | 110 | 1 | 14,945 | 9.41 | 2020-11-30 10:28 |
+| [831b246f748db46d4f52318e39171b0b587165282be3f07135d978ef0795d421](https://explorer.btc.com/btc/transaction/831b246f748db46d4f52318e39171b0b587165282be3f07135d978ef0795d421) | [659351](https://explorer.btc.com/btc/block/659351) | AntPool | 2nd | 1 | 0.001045 | 110 | 1 | 10,990 | 8.66 | 2020-11-30 12:22 |
+| [1f59bfc1ef2de7b2bc9d3dd3f3e35dba437c25a93d53533a76d604284047096c](https://explorer.btc.com/btc/transaction/1f59bfc1ef2de7b2bc9d3dd3f3e35dba437c25a93d53533a76d604284047096c) | [659355](https://explorer.btc.com/btc/block/659355) | F2Pool | 111th | 3 | 0.001045 | 110 | 1 | 17,093 | 11.40 | 2020-11-30 12:58 |
+| [6942e0751586aa8f37b6cad4eb036373035d74f40ba36277a7d1ef17ca8c06c3](https://explorer.btc.com/btc/transaction/6942e0751586aa8f37b6cad4eb036373035d74f40ba36277a7d1ef17ca8c06c3) | [659362](https://explorer.btc.com/btc/block/659362) | Huobi | 2nd | 2 | 0.001045 | 110 | 1 | 30,836 | 19.06 | 2020-11-30 14:49 |
+| [8e49e27c5eb6959e26dec8ab36d4dc6508105447ce8892d71c2837934eae825f](https://explorer.btc.com/btc/transaction/8e49e27c5eb6959e26dec8ab36d4dc6508105447ce8892d71c2837934eae825f) | [659481](https://explorer.btc.com/btc/block/659481) | ViaBTC | 6th | 1 | 0.001254 | 110 | 2 | 30,935 | 22.59 | 2020-12-01 10:40 |
 
 
 
