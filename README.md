@@ -23,11 +23,9 @@ Below we include direct links for each part of our data set:
 
 * Blocks: It contains information about the Bitcoin blocks mined in 2020. There are 53,214 blocks mined [610,691 – 663,904]. The data set is available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/blocks-610691--663904.csv.gz).
 
-
+* Miners: It describes the miners and their addresses used to receive the block reward. Available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/miners-610691--663904.csv.gz).
 
 * Transactions: It contains 107 files (~37GB) where the majority of which includes transactions for 500 blocks. There are 112,489,054 transactions + 53,214 coinbase transactions in total. This data set is useful for any Bitcoin data exploration. Available [here](https://people.mpi-sws.org/~johnme/datasets/#files%2Fbitcoin%2Ftransactions).
-* 
-* Miners: It describes the miners and their addresses used to receive the block reward. Available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/miners-610691--663904.csv.gz).
 
 
 ### Data set description
@@ -58,8 +56,6 @@ We describe the data set attributes below.
 | previousblockhash | It points to the hash of the previous block mined. |
 
 
-
-
 #### Miners
 
 | Attribute | Description |
@@ -69,6 +65,43 @@ We describe the data set attributes below.
 | n_tx | Number of transactions included in the block. It also includes the coinbase transaction.  |
 | addresses |  Wallet addresses where the miner sent the block rewards to (a.k.a. miner's addresses). |
 | n_addresses | Number of wallet addresses where the miner sent the block rewards to (a.k.a. miner's addresses)  |
+
+
+#### Transactions
+
+
+| Attribute | Description |
+| --- | --- |
+| block_height | The depth of the block the transaction is included. |
+| miner | The inferred miner of this particular block that contains the transactions. |
+| txid | The unique transaction identifier (ID). |
+| is_cpfp | It specifies if this transaction is a child-pays-for-parent transaction (CPFP-tx). |
+| is_coinbase | It shows if this is a coinbase transaction (i.e., the first transaction in the block used by miners to get the block reward. |
+| tx_position | The transaction position in the block. |
+| vin | List of JSON objects that specifies the transaction input. |
+| vout | List of json objects that specifies the transaction output |
+| n_vin | Number inputs the transaction has (it also counts invalid addresses or OP_Return opcode). |
+| n_vout | Number outputs the transaction has (it also counts invalid addresses or OP_Return opcode). |
+| hash | Transaction hash encoded in little-endian hexadecimal (including witness data) |
+| vsize | XXX |
+| size | The number of serialized bytes of the transaction (i.e., transaction serialized size). |
+| fee | The transaction fee offered by the issuer in BTC. |
+| cfeerate | XXX |
+| satsize | The fee in a satoshi-per-byte unit. |
+| feerate | The transaction fee in satoshi divided by the transaction size in kilobyte (i.e., int64(1x108 x fee * 1000 / size)). |
+| version | The transaction version. It could be either 1 or 2, where programs creating transactions using newer consensus rules may use higher version numbers. Version 2 means that [BIP 68](https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki#specification) applies. |
+| locktime | It specifies when a transaction could be considered for inclusion in a block. It could be locked based on two aspects: (i) block height when its value is less than 500 million, and (ii) timestamp in UTC when its value is greater than 500 million. For more detailed information, please see the [Locktime parsing rules](https://bitcoin.org/en/transactions-guide#locktime_parsing_rules). |
+| n_addresses | XXX |
+| n_spends_from | XXX |
+| spends_from | XXX |
+| n_vin_addresses | Number of wallet addresses the transaction spend from. |
+| n_vout_addresses | Number of wallet addresses to which the transaction sent the coins. |
+| vin_addresses | XXX |
+| vout_addresses | XXX |
+| n_utxo | XXX |
+
+
+
 
 
 ## Transaction acceleration
