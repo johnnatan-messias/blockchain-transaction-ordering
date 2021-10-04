@@ -10,7 +10,7 @@ In Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC 2021). Vi
 
 ## Data set
 
-:warning: **The full data set is available for download [here](https://people.mpi-sws.org/~johnme/datasets/).**
+:warning: **The full data set is available for download in a compressed dataframe format (CSV.GZ) [here](https://people.mpi-sws.org/~johnme/datasets/).**
 
 
 Data from permissionless blockchains (e.g., Bitcoin and Ethereum) are publicly available. However, accessing them would require the user to deploy a full node of that particular blockchain, which could be challenging due to computer resources (e.g., RAM, internet bandwidth). Bitcoin, for instance, allows users to export data from a particular block via an RPC JSON interface. Unfortunately, given a transaction ID, its exported raw JSON does not contain the data from which the transactions spend, making it hard to roll back the transactions chain to compute the transaction fees.
