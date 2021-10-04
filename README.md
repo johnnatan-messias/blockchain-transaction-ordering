@@ -93,10 +93,10 @@ We describe the data set attributes below.
 | feerate | The transaction fee in BTC divided by the transaction vsize in kilobyte (bitcoin-per-kilobyte). |
 | version | The transaction version. It could be either 1 or 2, where programs creating transactions using newer consensus rules may use higher version numbers. Version 2 means that [BIP 68](https://github.com/bitcoin/bips/blob/master/bip-0068.mediawiki#specification) applies. |
 | locktime | It specifies when a transaction could be considered for inclusion in a block. It could be locked based on two aspects: (i) block height when its value is less than 500 million, and (ii) timestamp in UTC when its value is greater than 500 million. For more detailed information, please see the [Locktime parsing rules](https://developer.bitcoin.org/devguide/transactions.html#locktime-and-sequence-number). |
-| n_addresses | XXX |
-| n_spends_from | Number of transactions that this transaction spends from. |
-| spends_from | Transactions (txid) that this transaction spends from. |
-| n_vin_addresses | Number of wallet addresses the transaction spend from. |
+| n_addresses | Number of transactions that this transaction spends the coins to. |
+| n_spends_from | Number of transactions that this transaction spends coints from. |
+| spends_from | Transactions (txid) that this transaction spends coins from. |
+| n_vin_addresses | Number of wallet addresses the transaction spend coins from. |
 | n_vout_addresses | Number of wallet addresses to which the transaction sent the coins. |
 | vin_addresses | Wallet addresses and coins transferred used in the transaction input. |
 | vout_addresses | Wallet addresses and coins transferred used in the transaction output. |
