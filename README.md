@@ -15,7 +15,7 @@ In Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC 2021). Vi
 
 Data from permissionless blockchains (e.g., Bitcoin and Ethereum) are publicly available. However, accessing them would require the user to deploy a full node of that particular blockchain, which could be challenging due to computer resources (e.g., RAM, internet bandwidth). Bitcoin, for instance, allows users to export data from a particular block via an RPC JSON interface. Unfortunately, given a transaction ID, its exported raw JSON does not contain the data from which the transactions spend, making it hard to roll back the transactions chain to compute the transaction fees.
 
-To allow scientific reproducibility and other research domains on the Bitcoin blockchain, we make our pre-processed Bitcoin data set available for download [here](). This data set contains the transactions ID (txid), transaction input and output data, fees, among other essential features for Bitcoin research.
+To allow scientific reproducibility and other research domains on the Bitcoin blockchain, we make our pre-processed Bitcoin data set available for download [here](https://people.mpi-sws.org/~johnme/datasets/). This data set contains the transactions ID (txid), transaction input and output data, fees, among other essential features for Bitcoin research.
 
 We believe this data set is key to any research group interested in understanding and providing insights into the Bitcoin ecosystem.
 
@@ -23,7 +23,7 @@ Below we include direct links for each part of our data set:
 
 * Blocks: It contains information about the Bitcoin blocks mined in 2020. There are 53,214 blocks mined [610,691 – 663,904]. The data set is available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/blocks-610691--663904.csv.gz)
 * Miners: It describes the miners and their addresses used to receive the block reward. Available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/miners-610691--663904.csv.gz)
-* Transactions: It contains 107 files (~37GB) where the majority of which includes transactions for 500 blocks. There are 112,489,054 transactions + 53,214 coinbase transactions in total. This data set is useful for any Bitcoin data exploration. Available [here](https://people.mpi-sws.org/~johnme/datasets/#files%2Fbitcoin%2Ftransactions)
+* Transactions: It contains 107 files (~37GB) where the majority of which includes transactions for 500 blocks. There are 112,489,054 transactions + 53,214 coinbase transactions in total. This data set is useful for any Bitcoin data exploration. Available [here](https://people.mpi-sws.org/~johnme/datasets/#files%2Fbitcoin%2Ftransactions).
 
 ## Transaction acceleration
 Transaction Accelerators are services where users pay Mining Pool Operators (MPO) to increase the probability of their transaction inclusion within a few blocks. MPOs get extra incentives (e.g., fiat money or other cryptocurrencies) to prioritize these transactions. Imagine a situation where an MPO also provides a Wallet service to its users, claiming that the transactions issued would get higher priority for inclusion or broadcast to some highly connected nodes. It is somehow some evidence that some MPOs might not purely follow the fee-per-byte strategy to order transactions as know to be the ordering norm.
