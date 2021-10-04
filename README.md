@@ -70,6 +70,8 @@ We describe the data set attributes below.
 #### Transactions
 
 
+
+
 | Attribute | Description |
 | --- | --- |
 | block_height | The depth of the block the transaction is included. |
@@ -79,11 +81,11 @@ We describe the data set attributes below.
 | is_coinbase | It shows if this is a coinbase transaction (i.e., the first transaction in the block used by miners to get the block reward. |
 | tx_position | The transaction position in the block. |
 | vin | List of JSON objects that specifies the transaction input. |
-| vout | List of json objects that specifies the transaction output |
+| vout | List of JSON objects that specifies the transaction output |
 | n_vin | Number inputs the transaction has (it also counts invalid addresses or OP_Return opcode). |
 | n_vout | Number outputs the transaction has (it also counts invalid addresses or OP_Return opcode). |
 | hash | Transaction hash encoded in little-endian hexadecimal (including witness data) |
-| vsize | XXX |
+| vsize | The virtual transaction size (weight/4). |
 | size | The number of serialized bytes of the transaction (i.e., transaction serialized size). |
 | fee | The transaction fee offered by the issuer in BTC. |
 | cfeerate | XXX |
@@ -96,9 +98,9 @@ We describe the data set attributes below.
 | spends_from | XXX |
 | n_vin_addresses | Number of wallet addresses the transaction spend from. |
 | n_vout_addresses | Number of wallet addresses to which the transaction sent the coins. |
-| vin_addresses | XXX |
-| vout_addresses | XXX |
-| n_utxo | XXX |
+| vin_addresses | Wallet addresses and coins transferred used in the transaction input. |
+| vout_addresses | Wallet addresses and coins transferred used in the transaction output. |
+| n_utxo | It shows if the transaction increases (positive values) or decreases (negative values) the Bitcoin Unspent Transaction Output (UTXO) set. |
 
 
 
