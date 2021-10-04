@@ -45,7 +45,7 @@ We describe the data set attributes below.
 | size | The serialized block size. It also included witness data. |
 | strippedsize | The block size but without witness data. |
 | weight | The block weight as defined in BIP 141. To produce the block vsize it is necessary to divide the weight by 4 (vsize=weight/4). |
-| vsize | XXX |
+| vsize | The virtual transaction size (weight/4). |
 | time | UNIX timestamp included by the miners during the mining phase. |
 | mediantime | The median block time UNIX timestamp. It is computed based on the time of 200 nodes neighbors. |
 | nonce | The nonce which satisfies the puzzle. |
