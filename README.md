@@ -21,9 +21,44 @@ We believe this data set is key to any research group interested in understandin
 
 Below we include direct links for each part of our data set:
 
-* Blocks: It contains information about the Bitcoin blocks mined in 2020. There are 53,214 blocks mined [610,691 – 663,904]. The data set is available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/blocks-610691--663904.csv.gz)
-* Miners: It describes the miners and their addresses used to receive the block reward. Available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/miners-610691--663904.csv.gz)
+* Blocks: It contains information about the Bitcoin blocks mined in 2020. There are 53,214 blocks mined [610,691 – 663,904]. The data set is available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/blocks-610691--663904.csv.gz).
+
+
+
 * Transactions: It contains 107 files (~37GB) where the majority of which includes transactions for 500 blocks. There are 112,489,054 transactions + 53,214 coinbase transactions in total. This data set is useful for any Bitcoin data exploration. Available [here](https://people.mpi-sws.org/~johnme/datasets/#files%2Fbitcoin%2Ftransactions).
+* 
+* Miners: It describes the miners and their addresses used to receive the block reward. Available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/miners-610691--663904.csv.gz).
+
+
+### Data set description
+
+We describe the data set attributes below.
+
+#### Blocks
+
+| Attribute | Description |
+| --- | --- |
+| height | The depth of the block also known as the block height. |
+| hash | The hash which satisfies the difficulty to solve the cryptographic puzzle. |
+| nTx | Number of transactions included in the block. It also includes the coinbase transaction. |
+| bits | A packed representation (called "Bits") for the block actual hexadecimal target. It is basically a compressed target for the next block. |
+| size | The serialized block size. It also included witness data. |
+| strippedsize | The block size but without witness data. |
+| weight | The block weight as defined in BIP 141. To produce the block vsize it is necessary to divide the weight by 4 (vsize=weight/4). |
+| vsize | XXX |
+| time | UNIX timestamp included by the miners during the mining phase. |
+| mediantime | The median block time UNIX timestamp. It is computed based on the time of 200 nodes neighbors. |
+| nonce | The nonce which satisfies the puzzle. |
+| version | the block version. |
+| chainwork | Expected number of hashes required to produce the chain up to this block (in hex). |
+| difficulty | The difficulty of the puzzle. |
+| merkleroot | The merkle root which represents the transactions inserted into the block. |
+| versionHex | The block version but in HEX format. |
+| nextblockhash | It points to the hash of the next block mined. |
+| previousblockhash | It points to the hash of the previous block mined. |
+
+
+
 
 ## Transaction acceleration
 Transaction Accelerators are services where users pay Mining Pool Operators (MPO) to increase the probability of their transaction inclusion within a few blocks. MPOs get extra incentives (e.g., fiat money or other cryptocurrencies) to prioritize these transactions. Imagine a situation where an MPO also provides a Wallet service to its users, claiming that the transactions issued would get higher priority for inclusion or broadcast to some highly connected nodes. It is somehow some evidence that some MPOs might not purely follow the fee-per-byte strategy to order transactions as know to be the ordering norm.
