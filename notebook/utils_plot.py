@@ -1,5 +1,6 @@
 import os
 
+import matplotlib
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
@@ -58,6 +59,9 @@ plt.rcParams['ytick.labelsize'] = 18
 
 pd.set_option('precision', 8)
 
+matplotlib.rcParams['pdf.fonttype'] = 42
+matplotlib.rcParams['ps.fonttype'] = 42
+
 
 def create_dir(path):
     os.makedirs(path, exist_ok=True)
@@ -82,14 +86,27 @@ def autolabel(rects, precision=4, fontsize=None):
                  ha='center', va='bottom', color='#333333', fontsize=fontsize)
 
 
-def plot_cdf(data, x_label='', y_label='', log=False, interval=None,
+def autolabel_bkp(rects, precision=4):
+    """
+    Attach a text label above each bar displaying its height
+    """
+    for rect in rects:
+        height = rect.get_height()
+        if height == 0:
+            continue
+        plt.text(rect.get_x() + rect.get_width()/2., 1.05*height,
+                 f'%.{precision}f' % float(height),
+                 ha='center', va='bottom', color='#333333')
+
+
+def plot_cdf(data, x_label="", y_label="", log=False, interval=None,
              color=None, ax=None, label=None,
-             linewidth=None, style='-', alpha=1, y_lim=[0, 1], marker=None, markersize=None):
+             linewidth=None, linestyle="-", alpha=1, y_lim=[0, 1], marker=None, markersize=None):
     if not ax:
         fig, ax = plt.subplots(nrows=1)
     ecdf = ECDF(data)
-    ax.plot(ecdf.x, ecdf.y, '-', color=color, label=label,
-            linewidth=linewidth, linestyle=style, alpha=alpha, marker=marker, markersize=markersize)
+    ax.plot(ecdf.x, ecdf.y, color=color, label=label,
+            linewidth=linewidth, linestyle=linestyle, alpha=alpha, marker=marker, markersize=markersize)
     ax.set_ylim(y_lim)
     ax.set_xlabel(x_label)
     ax.set_ylabel(y_label)
@@ -151,3 +168,12 @@ def plot_scatter(x, y, x_label='', y_label='', log_x=False, log_y=False,
         ax.set_yscale('log')
 
     return ax
+
+
+def table_to_wiki(df_table, header, legend=None, sep='||'):
+    wiki = sep + '\t' + ('\t' + sep + '\t').join(header) + '\t' + sep + '\n'
+    for value in df_table.itertuples():
+        wiki += sep + '\t' + \
+            ('\t' + sep + '\t').join(list(map(str, value))) + '\t' + sep + '\n'
+    wiki += '\n||' + legend + '||'
+    return wiki
