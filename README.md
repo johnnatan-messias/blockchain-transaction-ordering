@@ -3,9 +3,10 @@
 This content is part of the following scientific paper: https://people.mpi-sws.org/~johnme/pdf/messias_imc2021_btc_tx_ordering.pdf
 
 ```
-Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality.
-Johnnatan Messias, Mohamed Alzayat, Balakrishnan Chandrasekaran, Krishna P. Gummadi, Patrick Loiseau, and Alan Mislove.
-In Proceedings of the ACM SIGCOMM Internet Measurement Conference (IMC 2021). Virtual Event. November 2021.
+Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality. 
+Johnnatan Messias, Mohamed Alzayat, Balakrishnan Chandrasekaran, Krishna P. Gummadi, Patrick Loiseau, and Alan Mislove. 2021.
+In ACM Internet Measurement Conference (IMC '21), November 2-4, 2021, Virtual Event, USA. ACM, New York, NY, USA, 16 pages.
+https://doi.org/10.1145/3487552.3487823
 ```
 
 ## Data set
