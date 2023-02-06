@@ -4,9 +4,9 @@ This repository shares the scripts and data set uses on the following academic p
 
 * [Dissecting Bitcoin and Ethereum Transactions: On the Lack of Transaction Contention and Prioritization Transparency in Blockchains](./papers/messias_fc2023_tx_contention_prioritization_transparency.pdf). Johnnatan Messias, Vabuk Pahari, Balakrishnan Chandrasekaran, Krishna P. Gummadi, and Patrick Loiseau. In Proceedings of the Financial Cryptography and Data Security (FC 2023). Bol, Brač, Croatia. May, 2023.
 
-* [Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality](./papers/messias_imc2021_btc_tx_ordering.pdf). Johnnatan Messias, Mohamed Alzayat, Balakrishnan Chandrasekaran, Krishna P. Gummadi, Patrick Loiseau, and Alan Mislove. 2021. In ACM Internet Measurement Conference (IMC '21), November 2-4, 2021, Virtual Event, USA. ACM, New York, NY, USA, 16 pages. <https://doi.org/10.1145/3487552.3487823>
+* [Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality](https://dl.acm.org/doi/10.1145/3487552.3487823). Johnnatan Messias, Mohamed Alzayat, Balakrishnan Chandrasekaran, Krishna P. Gummadi, Patrick Loiseau, and Alan Mislove. 2021. In ACM Internet Measurement Conference (IMC '21), November 2-4, 2021, Virtual Event, USA. ACM, New York, NY, USA, 16 pages. <https://doi.org/10.1145/3487552.3487823>
 
-* [On Blockchain Commit Times: An analysis of how miners choose Bitcoin transactions](./papers/messias-sdbd-20.pdf). Johnnatan Messias and Mohamed Alzayat and Balakrishnan Chandrasekaran and Krishna P. Gummadi. In Proceedings of the KDD Workshop on Smart Data for Blockchain and Distributed Ledger (SDBD 2020). Virtual Event. August, 2020.
+* [On Blockchain Commit Times: An analysis of how miners choose Bitcoin transactions](https://johnnatan-messias.github.io/pdf/messias-sdbd-20.pdf). Johnnatan Messias and Mohamed Alzayat and Balakrishnan Chandrasekaran and Krishna P. Gummadi. In Proceedings of the KDD Workshop on Smart Data for Blockchain and Distributed Ledger (SDBD 2020). Virtual Event. August, 2020.
 
 ## Data set
 
