@@ -1,30 +1,8 @@
-# Bitcoin data set
-
-**Note:** The bitcoin data set with respect to 2018 and 2019 will be available soon.
-
-:warning: **The full data set is available for download in a compressed dataframe format (CSV.GZ) [here](https://people.mpi-sws.org/~johnme/datasets/).**
-
-:warning: **The notebook available [here](notebook/load-and-process-dataset.ipynb) describes how to load and process our Bitcoin data set. It is useful to compute other relevant attributes e.g., SPPE and PPE values.**
-
-Data from permissionless blockchains (e.g., Bitcoin and Ethereum) are publicly available. However, accessing them would require the user to deploy a full node of that particular blockchain, which could be challenging due to computer resources (e.g., RAM, internet bandwidth). Bitcoin, for instance, allows users to export data from a particular block via an RPC JSON interface. Unfortunately, given a transaction ID, its exported raw JSON does not contain the data from which the transactions spend, making it hard to roll back the transactions chain to compute the transaction fees.
-
-To allow scientific reproducibility and other research domains on the Bitcoin blockchain, we make our pre-processed Bitcoin data set available for download [here](https://people.mpi-sws.org/~johnme/datasets/). This data set contains the transactions ID (txid), transaction input and output data, fees, among other essential features for Bitcoin research.
-
-We believe this data set is key to any research group interested in understanding and providing insights into the Bitcoin ecosystem.
-
-Below we include direct links for each part of our data set:
-
-* Blocks: It contains information about the Bitcoin blocks mined in 2020. There are 53,214 blocks mined [610,691 – 663,904]. The data set is available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/blocks-610691--663904.csv.gz).
-
-* Miners: It describes the miners and their addresses used to receive the block reward. Available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/miners-610691--663904.csv.gz).
-
-* Transactions: It contains 107 files (~37GB) where the majority of which includes transactions for 500 blocks. There are 112,489,054 transactions + 53,214 coinbase transactions in total. This data set is useful for any Bitcoin data exploration. Available [here](https://people.mpi-sws.org/~johnme/datasets/#files%2Fbitcoin%2Ftransactions).
-
-## Data set description
+# Bitcoin data set description
 
 We describe the data set attributes below.
 
-### Blocks
+## Blocks
 
 | Attribute | Description |
 | --- | --- |
@@ -47,7 +25,7 @@ We describe the data set attributes below.
 | nextblockhash | It points to the hash of the next block mined. |
 | previousblockhash | It points to the hash of the previous block mined. |
 
-### Miners
+## Miners
 
 | Attribute | Description |
 | --- | --- |
@@ -57,7 +35,7 @@ We describe the data set attributes below.
 | addresses |  Wallet addresses where the miner sent the block rewards to (a.k.a. miner's addresses). |
 | n_addresses | Number of wallet addresses where the miner sent the block rewards to (a.k.a. miner's addresses)  |
 
-### Transactions
+## Transactions
 
 | Attribute | Description |
 | --- | --- |
