@@ -1,6 +1,6 @@
 # On the Lack of Transaction Contention and Prioritization Transparency in Blockchains
 
-This repository shares the scripts and data set uses on the following academic peer-reviewed publications:
+This repository shares the scripts and data sets used in the following peer-reviewed academic publications:
 
 * [Dissecting Bitcoin and Ethereum Transactions: On the Lack of Transaction Contention and Prioritization Transparency in Blockchains](./papers/messias_fc2023_tx_contention_prioritization_transparency.pdf). Johnnatan Messias, Vabuk Pahari, Balakrishnan Chandrasekaran, Krishna P. Gummadi, and Patrick Loiseau. In Proceedings of the Financial Cryptography and Data Security (FC 2023). Bol, Brač, Croatia. May, 2023.
 
