@@ -1,48 +1,76 @@
 # On the Lack of Transaction Contention and Prioritization Transparency in Blockchains
 
+Consider also visiting our Blockchain Research Group webpage at <https://blockchain.mpi-sws.org>.
+
 This repository shares the scripts and data sets used in the following peer-reviewed academic publications:
 
-* [Dissecting Bitcoin and Ethereum Transactions: On the Lack of Transaction Contention and Prioritization Transparency in Blockchains](./papers/messias_fc2023_tx_contention_prioritization_transparency.pdf). Johnnatan Messias, Vabuk Pahari, Balakrishnan Chandrasekaran, Krishna P. Gummadi, and Patrick Loiseau. In Proceedings of the Financial Cryptography and Data Security (FC 2023). Bol, Brač, Croatia. May, 2023.
+* [Dissecting Bitcoin and Ethereum Transactions: On the Lack of Transaction Contention and Prioritization Transparency in Blockchains](./papers/messias-fc23-transaction-prioritization.pdf). Johnnatan Messias, Vabuk Pahari, Balakrishnan Chandrasekaran, Krishna P. Gummadi, and Patrick Loiseau. In Proceedings of the Financial Cryptography and Data Security (FC 2023). Bol, Brač, Croatia. May, 2023.
 
-* [Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality](https://dl.acm.org/doi/10.1145/3487552.3487823). Johnnatan Messias, Mohamed Alzayat, Balakrishnan Chandrasekaran, Krishna P. Gummadi, Patrick Loiseau, and Alan Mislove. 2021. In ACM Internet Measurement Conference (IMC 2021), November 2-4, 2021, Virtual Event, USA. ACM, New York, NY, USA, 16 pages. <https://doi.org/10.1145/3487552.3487823>
+* [Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality](./papers/messias_imc2021_btc_tx_ordering.pdf). Johnnatan Messias, Mohamed Alzayat, Balakrishnan Chandrasekaran, Krishna P. Gummadi, Patrick Loiseau, and Alan Mislove. 2021. In ACM Internet Measurement Conference (IMC 2021), November 2-4, 2021, Virtual Event, USA. ACM, New York, NY, USA, 16 pages. <https://doi.org/10.1145/3487552.3487823>
 
-* [On Blockchain Commit Times: An analysis of how miners choose Bitcoin transactions](https://johnnatan-messias.github.io/pdf/messias-sdbd-20.pdf). Johnnatan Messias and Mohamed Alzayat and Balakrishnan Chandrasekaran and Krishna P. Gummadi. In Proceedings of the KDD Workshop on Smart Data for Blockchain and Distributed Ledger (SDBD 2020). Virtual Event. August, 2020.
+* [On Blockchain Commit Times: An analysis of how miners choose Bitcoin transactions](./papers/messias-sdbd-20.pdf). Johnnatan Messias and Mohamed Alzayat and Balakrishnan Chandrasekaran and Krishna P. Gummadi. In Proceedings of the KDD Workshop on Smart Data for Blockchain and Distributed Ledger (SDBD 2020). Virtual Event. August, 2020.
 
 ## Data sets
 
 Data from permissionless blockchains (e.g., Bitcoin and Ethereum) are publicly available. However, accessing them would require the user to deploy a full node of that particular blockchain, which can be challenging due to computing resources (e.g., RAM, internet bandwidth). Bitcoin, for example, allows users to export data from a particular block via an RPC JSON interface. Unfortunately, given a transaction ID, the exported raw JSON does not contain the data from which the transactions spend, making it difficult to roll back the transaction chain to calculate the transaction fees.
 
-To enable scientific reproducibility of our results and other research areas to explore the Bitcoin and Ethereum blockchains, we make our pre-processed Bitcoin and Ethereum data sets available for download [here](https://people.mpi-sws.org/~johnme/datasets/).
+To enable scientific reproducibility of our results and other research areas to explore the Bitcoin and Ethereum blockchains, we make our pre-processed Bitcoin and Ethereum data sets available for download [here](https://blockchain.mpi-sws.org/datasets/).
 
 We believe this data set is key to any research group interested in understanding and providing insights into the Bitcoin ecosystem.
 
-### Bitcoin
-
-This data set contains the transactions ID (txid), transaction input and output data, fees, among other essential features for Bitcoin research.
-
-**Note:** The bitcoin data set for 2018 and 2019 will be available soon.
-
-:warning: **The full data set is available for download in a compressed dataframe format (CSV.GZ) [here](https://people.mpi-sws.org/~johnme/datasets/).**
-
-:warning: **The notebook available [here](notebook/load-and-process-dataset.ipynb) describes how to load and process our Bitcoin data set. It is useful to compute other relevant attributes e.g., SPPE and PPE values.**
-
-Below are direct links for each part of our data set:
-
-* Blocks: It contains information about the Bitcoin blocks mined in 2020. There are 53,214 blocks mined [610,691 – 663,904]. The data set is available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/blocks-610691--663904.csv.gz).
-
-* Miners: It describes the miners and their addresses used to receive the block reward. Available [here](https://people.mpi-sws.org/~johnme/datasets/files/bitcoin/miners-610691--663904.csv.gz).
-
-* Transactions: It contains 107 files (~37GB) where the majority of which includes transactions for 500 blocks. There are 112,489,054 transactions + 53,214 coinbase transactions in total. This data set is useful for any Bitcoin data exploration. Available [here](https://people.mpi-sws.org/~johnme/datasets/#files%2Fbitcoin%2Ftransactions).
-
-The Bitcoin data set description is available at [./docs/bitcoin.md](./docs/bitcoin.md).
-
 ### Ethereum
 
-**Note:** The ethereum data set will be available soon.
+This data set was used in our [FC 2023](./papers/messias-fc23-transaction-prioritization.pdf) paper. It contains the transactions ID (txid), transaction input and output data, fees, transaction receipt data, and other essential features for Ethereum research.
 
 Similarly, the Ethereum data set contains the transactions ID (txid), transaction input and output data, fees, transaction receipt data, and other essential features for Ethereum research.
 
+:warning: The full data set is available for download in a compressed dataframe format (CSV.GZ) [here](https://blockchain.mpi-sws.org/datasets/#files%2Fethereum).
+
+Below are direct links for each part of our data set:
+
+* Blocks: It contains information about the Bitcoin blocks mined from September 8th, 2021 to June 30th, 2022. There are 1,867,000 blocks mined [13,183,000 to 15,049,999]. The data set is available [here](https://blockchain.mpi-sws.org/datasets/files/ethereum/blocks-ethereum-13183000-15049999.csv.gz).
+
+* Transactions: It contains 76 files (~19GB) where the majority of which includes transactions for 25000 blocks. There are 347,629,393 transactions in total. This data set is useful for any Bitcoin data exploration. Available [here](https://blockchain.mpi-sws.org/datasets/#files%2Fethereum%2Ftransactions).
+
 The Ethereum data set description is available at [./docs/ethereum.md](./docs/ethereum.md).
+
+### Bitcoin (2018 -- 2020)
+
+This data set was used in our [FC 2023](./papers/messias-fc23-transaction-prioritization.pdf) paper. It contains the transactions ID (txid), transaction input and output data, fees, among other essential features for Bitcoin research.
+
+This data set contains the transactions ID (txid), transaction input and output data, fees, among other essential features for Bitcoin research.
+
+:warning: The full data set is available for download in a compressed dataframe format (CSV.GZ) [here](https://blockchain.mpi-sws.org/datasets/).
+
+Below are direct links for each part of our data set:
+
+* Blocks: It contains information about the Bitcoin blocks mined betwenn 2018 and 2020. There are 53,214 blocks mined [501,951 to 663,904]. The data set is available [here](https://blockchain.mpi-sws.org/datasets/files/bitcoin/blocks_500000_664000.csv.gz).
+
+* Miners: It describes the miners and their addresses used to receive the block reward. Available [here](https://blockchain.mpi-sws.org/datasets/files/bitcoin/miners_500000_664000.csv.gz).
+
+* Transactions: It contains 325 files (~95GB) where the majority of which includes transactions for 500 blocks. There are 313,575,387 transactions + 161,954 coinbase transactions in total. This data set is useful for any Bitcoin data exploration. Available [here](https://blockchain.mpi-sws.org/datasets/#files%2Fbitcoin%2Ftransactions).
+
+The Bitcoin data set description is available at [./docs/bitcoin.md](./docs/bitcoin.md).
+
+### Bitcoin (2020)
+
+This data set was used in our [IMC 2021](./papers/messias_imc2021_btc_tx_ordering.pdf) paper. It contains the transactions ID (txid), transaction input and output data, fees, among other essential features for Bitcoin research.
+
+This data set contains the transactions ID (txid), transaction input and output data, fees, among other essential features for Bitcoin research.
+
+:warning: The full data set is available for download in a compressed dataframe format (CSV.GZ) [here](https://blockchain.mpi-sws.org/datasets/).
+
+:warning: The notebook available [here](notebook/load-and-process-dataset.ipynb) describes how to load and process our Bitcoin data set. It is useful to compute other relevant attributes e.g., SPPE and PPE values.
+
+Below are direct links for each part of our data set:
+
+* Blocks: It contains information about the Bitcoin blocks mined in 2020. There are 53,214 blocks mined [610,691 to 663,904]. The data set is available [here](https://blockchain.mpi-sws.org/datasets/files/bitcoin/blocks-610691--663904.csv.gz).
+
+* Miners: It describes the miners and their addresses used to receive the block reward. Available [here](https://blockchain.mpi-sws.org/datasets/files/bitcoin/miners-610691--663904.csv.gz).
+
+* Transactions: It contains 107 files (~37GB) where the majority of which includes transactions for 500 blocks. There are 112,489,054 transactions + 53,214 coinbase transactions in total. This data set is useful for any Bitcoin data exploration. Available [here](https://blockchain.mpi-sws.org/datasets/#files%2Fbitcoin%2Ftransactions-2020).
+
+The Bitcoin data set description is available at [./docs/bitcoin.md](./docs/bitcoin.md).
 
 ## Transaction accelerators
 
@@ -101,7 +129,7 @@ If you find it useful, please consider citing our academic peer-reviewed papers:
 @inproceedings{Messias@FC2023,
   author = {Johnnatan Messias and Vabuk Pahari and Balakrishnan Chandrasekaran and Krishna P. Gummadi and Patrick Loiseau},
   title = {{Dissecting Bitcoin and Ethereum Transactions: On the Lack of Transaction Contention and Prioritization Transparency in Blockchains}},
-  booktitle = {Proceedings of the Financial Cryptography and Data Security (FC'23)},
+  booktitle = {Proceedings of the Financial Cryptography and Data Security (FC '23)},
   month = {May},
   year = {2023}
 }
@@ -111,7 +139,7 @@ If you find it useful, please consider citing our academic peer-reviewed papers:
 @inproceedings{Messias@IMC2021,
   author = {Johnnatan Messias and Mohamed Alzayat and Balakrishnan Chandrasekaran and Krishna P. Gummadi and Patrick Loiseau and Alan Mislove},
   title = {{Selfish \& Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality}},
-  booktitle = {Proceedings of the ACM Internet Measurement Conference (IMC'21)},
+  booktitle = {Proceedings of the ACM Internet Measurement Conference (IMC '21)},
   month = {November},
   year = {2021}
 }
