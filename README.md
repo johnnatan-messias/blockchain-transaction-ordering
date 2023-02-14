@@ -44,7 +44,7 @@ This data set contains the transactions ID (txid), transaction input and output 
 
 Below are direct links for each part of our data set:
 
-* Blocks: It contains information about the Bitcoin blocks mined betwenn 2018 and 2020. There are 53,214 blocks mined [501,951 to 663,904]. The data set is available [here](https://blockchain.mpi-sws.org/datasets/files/bitcoin/blocks_500000_664000.csv.gz).
+* Blocks: It contains information about the Bitcoin blocks mined betwenn 2018 and 2020. There are 161,954 blocks mined [501,951 to 663,904]. The data set is available [here](https://blockchain.mpi-sws.org/datasets/files/bitcoin/blocks_500000_664000.csv.gz).
 
 * Miners: It describes the miners and their addresses used to receive the block reward. Available [here](https://blockchain.mpi-sws.org/datasets/files/bitcoin/miners_500000_664000.csv.gz).
 
