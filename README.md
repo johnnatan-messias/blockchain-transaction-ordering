@@ -8,7 +8,8 @@ This repository shares the scripts and data sets used in the following peer-revi
 
 * [Selfish & Opaque Transaction Ordering in the Bitcoin Blockchain: The Case for Chain Neutrality](./papers/messias_imc2021_btc_tx_ordering.pdf). Johnnatan Messias, Mohamed Alzayat, Balakrishnan Chandrasekaran, Krishna P. Gummadi, Patrick Loiseau, and Alan Mislove. 2021. In ACM Internet Measurement Conference (IMC 2021), November 2-4, 2021, Virtual Event, USA. ACM, New York, NY, USA, 16 pages. <https://doi.org/10.1145/3487552.3487823>
 
-* [On Blockchain Commit Times: An analysis of how miners choose Bitcoin transactions](./papers/messias-sdbd-20.pdf). Johnnatan Messias and Mohamed Alzayat and Balakrishnan Chandrasekaran and Krishna P. Gummadi. In Proceedings of the KDD Workshop on Smart Data for Blockchain and Distributed Ledger (SDBD 2020). Virtual Event. August, 2020.
+And others:
+* [On Blockchain Commit Times: An analysis of how miners choose Bitcoin transactions](./papers/messias-sdbd-20.pdf). Johnnatan Messias and Mohamed Alzayat and Balakrishnan Chandrasekaran and Krishna P. Gummadi. In KDD Workshop on Smart Data for Blockchain and Distributed Ledger (SDBD 2020). Virtual Event. August, 2020.
 
 ## Data sets
 
